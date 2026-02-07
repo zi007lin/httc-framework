@@ -44,3 +44,4 @@ Vite + React — zero dependencies beyond React itself.
 ## License
 
 MIT — see [LICENSE](./LICENSE).
+
