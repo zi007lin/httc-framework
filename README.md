@@ -30,13 +30,6 @@ npm install
 npm run dev
 ```
 
-## Deploy to Cloudflare Pages
-
-Connect this repo to Cloudflare Pages with:
-- **Framework preset:** Vite
-- **Build command:** `npm run build`
-- **Output directory:** `dist`
-
 ## Stack
 
 Vite + React — zero dependencies beyond React itself.
