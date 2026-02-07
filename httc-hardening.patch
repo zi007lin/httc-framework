@@ -1,0 +1,275 @@
+--- a/README.md
++++ b/README.md
+@@ -1,17 +1,23 @@
+ # HTTC — Governance & Fair-Play Framework
+ 
+-Interactive reference for Hester Table Tennis Club leaders.
++Community-created guidelines for organizing recreational table tennis play.
+ 
+-**Location:** 100 Hester Street, NY 10002 · Inside MS 131 · Chinatown YMCA Beacon Program
++**Location context:** 100 Hester Street, NY 10002 · Inside MS 131 · Chinatown YMCA Beacon Program
++
++## Disclaimer
++
++This document was created by community volunteers to help organize recreational table tennis play. It is **not endorsed by, affiliated with, or authorized by** the YMCA of Greater New York, NYC Department of Education, MS 131, or any government agency.
++
++These are suggested community guidelines, not enforceable rules. Participation in table tennis is a physical activity undertaken at each individual's own risk. The authors and contributors accept no liability for injuries, disputes, or damages arising from use of this framework.
+ 
+ ## Sections
+ 
+ - **Overview** — Purpose, principles, stewardship context
+-- **House Rules** — Time rotation, equipment care, conduct
++- **House Rules** — Time rotation, equipment care, conduct guidelines
+ - **Queue System** — Paddle-under-table & magnetic dry-erase labels
+-- **Stewards** — Do/Don't guide with copy-paste scripts
++- **Stewards** — Do/Don't guide with suggested phrases
+ - **Escalation** — 4-step quiet de-escalation path
+-- **Posted Sign** — Print-ready Rules of Conduct
++- **Posted Sign** — Print-ready community guidelines
+ 
+ ## Development
+ 
+@@ -22,15 +28,15 @@
+ 
+ ## Deploy to Cloudflare Pages
+ 
+-```bash
+-npm run build
+-npx wrangler pages deploy dist --project-name httc-framework
+-```
+-
+-Or connect this repo to Cloudflare Pages with:
++Connect this repo to Cloudflare Pages with:
++- **Framework preset:** Vite
+ - **Build command:** `npm run build`
+ - **Output directory:** `dist`
+ 
+ ## Stack
+ 
+ Vite + React — zero dependencies beyond React itself.
++
++## License
++
++MIT — see [LICENSE](./LICENSE).
+--- a/src/App.jsx
++++ b/src/App.jsx
+@@ -77,7 +77,7 @@
+           <h1 style={{
+             fontSize: "24px", fontWeight: 800, color: "#FFF",
+             margin: "0 0 6px", lineHeight: 1.25, letterSpacing: "-0.01em",
+-          }}>Governance, Stewardship &<br />Fair-Play Framework</h1>
++          }}>Community Guidelines &<br />Fair-Play Framework</h1>
+           <div style={{ fontSize: "13px", color: "#8B92AB", marginTop: "8px" }}>
+             100 Hester Street, NY 10002 · Inside MS 131 · Beacon Program
+           </div>
+@@ -113,7 +113,7 @@
+           <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+             <h2 style={{ fontSize: "20px", fontWeight: 800, margin: 0, color: Slate }}>What This Is</h2>
+             <p style={{ fontSize: "15px", lineHeight: 1.7, color: Sub, margin: 0 }}>
+-              A clear, practical framework for how table tennis operates at HTTC. Designed to work <strong>as-is</strong> within our free, public, Beacon-operated space.
++              Community-created guidelines for organizing recreational table tennis play at HTTC. Designed to work within our free, public, Beacon-operated space.
+             </p>
+ 
+             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+@@ -136,7 +136,7 @@
+                 Our Role: Stewardship
+               </div>
+               <p style={{ fontSize: "14px", color: "#2D5A3F", margin: 0, lineHeight: 1.7 }}>
+-                HTTC operates inside a public school building during Beacon hours. The program is <strong>free and open to the public</strong>. Access is provided through the Chinatown YMCA Beacon Program. HTTC does not charge fees, issue memberships, or control entry. Our role is helping organize play so <strong>everyone gets a turn</strong>.
++                HTTC operates inside a public school building during Beacon hours. The program is <strong>free and open to the public</strong>. Access is provided through the Chinatown YMCA Beacon Program. HTTC does not charge fees, issue memberships, or control entry. These guidelines were created by community volunteers to help organize play so <strong>everyone gets a turn</strong>.
+               </p>
+             </Card>
+           </div>
+@@ -147,30 +147,30 @@
+           <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+             <h2 style={{ fontSize: "20px", fontWeight: 800, margin: 0, color: Slate }}>House Rules</h2>
+             <p style={{ fontSize: "14px", color: Sub, margin: 0, lineHeight: 1.6 }}>
+-              Apply to all tables during Beacon hours. Simple, visible, and designed to keep play fair.
++              Suggested for all tables during Beacon hours. Simple, visible, and designed to keep play fair.
+             </p>
+ 
+             {[
+               {
+                 title: "⏱ Time & Rotation",
+                 rules: [
+-                  "When others are waiting, a 20-minute rotation applies",
+-                  "Players rotate off the table after the time limit or by mutual agreement",
++                  "When others are waiting, a 20-minute rotation is recommended",
++                  "Players are encouraged to rotate off the table after the time limit or by mutual agreement",
+                 ],
+               },
+               {
+                 title: "🪑 Equipment Care",
+                 rules: [
+-                  "No sitting, leaning, or storing items on tables",
+-                  "Do not move tables without staff approval",
++                  "Please avoid sitting, leaning, or storing items on tables",
++                  "Please check with staff before moving tables",
+                 ],
+               },
+               {
+                 title: "🤝 Conduct",
+                 rules: [
+-                  "No gambling, fighting, or threatening behavior",
+-                  "Keep noise appropriate for a school setting",
+-                  "No amplified sound without permission",
++                  "Gambling, fighting, and threatening behavior are not permitted in the facility",
++                  "Please keep noise appropriate for a school setting",
++                  "Amplified sound requires staff permission",
+                 ],
+               },
+             ].map((group, i) => (
+@@ -375,12 +375,12 @@
+                 },
+                 {
+                   step: "3", title: "Step Back",
+-                  desc: "Do not argue if disagreement continues. Disengage politely.",
++                  desc: "Do not argue if disagreement continues. Disengage and step away.",
+                   color: "#D97706", bg: "#FFF7ED",
+                 },
+                 {
+-                  step: "4", title: "Escalate",
+-                  desc: "Contact on-site YMCA staff for assistance. Let them handle it.",
++                  step: "4", title: "Refer to Staff",
++                  desc: "If needed, let on-site YMCA staff know about the situation. They have authority to act.",
+                   color: R, bg: RLight,
+                 },
+               ].map((s, i) => (
+@@ -417,7 +417,7 @@
+               <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                 <span style={{ fontSize: "16px" }}>⚠️</span>
+                 <p style={{ fontSize: "14px", color: "#8B2E1E", margin: 0, lineHeight: 1.6 }}>
+-                  <strong>Safety or aggressive behavior should be escalated immediately</strong> — go straight to Step 4. Do not attempt to manage threatening situations yourself.
++                  <strong>Safety concerns or aggressive behavior — go straight to Step 4.</strong> Do not attempt to manage threatening situations. Notify on-site staff immediately.
+                 </p>
+               </div>
+             </Card>
+@@ -427,9 +427,9 @@
+         {/* ===== POSTED SIGN ===== */}
+         {tab === "sign" && (
+           <div style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+-            <h2 style={{ fontSize: "20px", fontWeight: 800, margin: 0, color: Slate }}>One-Page Rules of Conduct</h2>
++            <h2 style={{ fontSize: "20px", fontWeight: 800, margin: 0, color: Slate }}>One-Page Community Guidelines</h2>
+             <p style={{ fontSize: "14px", color: Sub, margin: 0, lineHeight: 1.6 }}>
+-              For printing and posting at the tables. Clean, readable, authoritative.
++              For printing and posting at the tables. Clean, readable, and friendly.
+             </p>
+ 
+             {/* The printable sign */}
+@@ -447,7 +447,7 @@
+                   margin: "0 0 4px", letterSpacing: "-0.01em",
+                 }}>Hester Table Tennis</h3>
+                 <div style={{ fontSize: "14px", fontWeight: 700, color: G }}>
+-                  Rules of Conduct
++                  Community Guidelines
+                 </div>
+               </div>
+ 
+@@ -460,9 +460,9 @@
+                   { icon: "🌐", text: "Free and open to the public during Beacon hours" },
+                   { icon: "⏱", text: "20-minute rotation when others are waiting" },
+                   { icon: "🧲", text: "Use visible queue (paddle or name magnet)" },
+-                  { icon: "🚫", text: "No sitting or leaning on tables" },
+-                  { icon: "⚖️", text: "No gambling, fighting, or disorderly conduct" },
+-                  { icon: "🔇", text: "Keep noise appropriate for a school environment" },
++                  { icon: "🚫", text: "Please don't sit or lean on tables" },
++                  { icon: "⚖️", text: "Gambling, fighting, and disorderly conduct are not permitted" },
++                  { icon: "🔇", text: "Please keep noise appropriate for a school environment" },
+                 ].map((rule, i) => (
+                   <div key={i} style={{
+                     display: "flex", gap: "12px", alignItems: "center",
+@@ -483,12 +483,17 @@
+                 <p style={{
+                   fontSize: "12px", color: "#999", margin: "0 0 6px", lineHeight: 1.5,
+                 }}>
+-                  Failure to follow these rules may result in table reset or staff involvement.
++                  Questions or concerns? Please speak with on-site YMCA staff.
+                 </p>
+                 <p style={{
+                   fontSize: "12px", color: Sub, margin: 0, fontWeight: 600,
+                 }}>
+-                  Operated with support from the<br />Chinatown YMCA Beacon Program
++                  Community guidelines by HTTC volunteers
++                </p>
++                <p style={{
++                  fontSize: "10px", color: "#BBB", margin: "6px 0 0", lineHeight: 1.4,
++                }}>
++                  Not an official publication of the YMCA, DOE, or any government agency.
+                 </p>
+               </div>
+             </div>
+@@ -517,7 +522,7 @@
+           <p style={{
+             fontSize: "14px", color: "#8B92AB", margin: 0, lineHeight: 1.6,
+           }}>
+-            Keep rules simple, visible, and respectful. Focus on stewardship, not authority.
++            Keep things simple, visible, and respectful. We're here to help, not to control.
+           </p>
+           <p style={{
+             fontSize: "16px", margin: "10px 0 0", color: "#FFF", fontWeight: 700,
+@@ -525,6 +530,41 @@
+             Happy playing. 🏓
+           </p>
+         </div>
++
++        {/* Legal disclaimer footer */}
++        <div style={{
++          marginTop: "20px", padding: "16px 20px",
++          background: "#FFF", borderRadius: "8px",
++          border: "1px solid #E6E8ED",
++        }}>
++          <p style={{
++            fontSize: "11px", color: "#999", margin: "0 0 8px", lineHeight: 1.6,
++            textAlign: "center",
++          }}>
++            <strong style={{ color: "#777" }}>Disclaimer</strong>
++          </p>
++          <p style={{
++            fontSize: "11px", color: "#999", margin: "0 0 6px", lineHeight: 1.6,
++          }}>
++            This document was created by community volunteers to help organize recreational table tennis play.
++            It is not endorsed by, affiliated with, or authorized by the YMCA of Greater New York,
++            NYC Department of Education, MS 131, or any government agency.
++          </p>
++          <p style={{
++            fontSize: "11px", color: "#999", margin: "0 0 6px", lineHeight: 1.6,
++          }}>
++            These are suggested community guidelines, not enforceable rules. HTTC volunteers serve in a
++            facilitation role only and have no authority to enforce rules, ban participants, or make
++            decisions on behalf of the facility or its operators.
++          </p>
++          <p style={{
++            fontSize: "11px", color: "#999", margin: "0", lineHeight: 1.6,
++          }}>
++            <strong style={{ color: "#777" }}>Assumption of risk:</strong> Table tennis is a physical activity.
++            All participants play at their own risk. The authors, contributors, and volunteer stewards
++            accept no liability for injuries, property damage, or personal disputes arising during play.
++          </p>
++        </div>
+       </div>
+     </div>
+   );
+--- a/LICENSE
++++ b/LICENSE
+@@ -0,0 +1,21 @@
++MIT License
++
++Copyright (c) 2026 HTTC Community Contributors
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in all
++copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
++SOFTWARE.
