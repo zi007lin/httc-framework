@@ -84,6 +84,23 @@ export default function HTTCFinal() {
         </div>
       </div>
 
+      {/* Primary Disclaimer — visible without scrolling */}
+      <div style={{
+        background: "#F8F9FA", borderBottom: "1px solid #DDD",
+        padding: "10px 28px",
+      }}>
+        <div style={{ maxWidth: "680px", margin: "0 auto" }}>
+          <p style={{
+            fontSize: "12px", color: "#666", margin: 0, lineHeight: 1.6,
+          }}>
+            <strong style={{ color: "#555" }}>Disclaimer:</strong> This document provides community guidance
+            to support fair and shared use of table tennis facilities during public Beacon hours.
+            It is <strong>not</strong> an official YMCA, NYC DOE, or City of New York policy.
+            On-site YMCA/Beacon staff and facility rules take priority at all times.
+          </p>
+        </div>
+      </div>
+
       {/* Tabs */}
       <div style={{
         background: "#FFF", borderBottom: "1px solid #E6E8ED",
@@ -541,21 +558,24 @@ export default function HTTCFinal() {
             fontSize: "11px", color: "#999", margin: "0 0 8px", lineHeight: 1.6,
             textAlign: "center",
           }}>
-            <strong style={{ color: "#777" }}>Disclaimer</strong>
+            <strong style={{ color: "#777" }}>Legal Notice</strong>
           </p>
           <p style={{
             fontSize: "11px", color: "#999", margin: "0 0 6px", lineHeight: 1.6,
           }}>
-            This document was created by community volunteers to help organize recreational table tennis play.
-            It is not endorsed by, affiliated with, or authorized by the YMCA of Greater New York,
-            NYC Department of Education, MS 131, or any government agency.
+            This site is published for informational and community coordination purposes only.
+            It does not create membership, enforcement authority, contractual rights, or obligations.
+            Participation is voluntary. Facility access, conduct, and decisions remain under the
+            authority of the Chinatown YMCA Beacon Program and applicable city agencies.
           </p>
           <p style={{
             fontSize: "11px", color: "#999", margin: "0 0 6px", lineHeight: 1.6,
           }}>
-            These are suggested community guidelines, not enforceable rules. HTTC volunteers serve in a
-            facilitation role only and have no authority to enforce rules, ban participants, or make
-            decisions on behalf of the facility or its operators.
+            This document was created by community volunteers. It is not endorsed by, affiliated with,
+            or authorized by the YMCA of Greater New York, NYC Department of Education, MS 131,
+            or any government agency. HTTC volunteers serve in a facilitation role only and have
+            no authority to enforce rules, ban participants, or make decisions on behalf of the
+            facility or its operators.
           </p>
           <p style={{
             fontSize: "11px", color: "#999", margin: "0", lineHeight: 1.6,
